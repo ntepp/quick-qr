@@ -2,6 +2,10 @@
 
 A simple web application to generate QR codes from URLs, built with a React frontend and a Flask backend, containerized using Docker.
 
+## Demo
+
+![QuickQR Demo GIF](demo.gif)
+
 ## Table of Contents
 
 - [Tech Stack](#tech-stack)
