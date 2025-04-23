@@ -1,12 +1,22 @@
-version: '3.8'
+version: "3.8"
+
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+    container_name: qr-backend
     ports:
       - "8080:8080"
+    environment:
+      - FLASK_ENV=development
+
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+    container_name: qr-frontend
     ports:
       - "3000:80"
-    depends_on:
-      - backend
+    environment:
+      - VITE_API_URL=http://localhost:3000
+    env_file:
+      - ./frontend/.env.docker
